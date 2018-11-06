@@ -11,8 +11,8 @@ FILE_NAME = "my_weather.txt"
 def get_request(url, params=None):
     try:
         return json.loads(requests.get(url, params=params).content)
-    except IOError:
-        print("Error: Internet connection issues.")
+    except Exception:
+        raise IOError("Error: Internet connection issues.")
 
 
 def weather_to_file(wether, file):
@@ -51,6 +51,7 @@ def weather_print(city_list):
     for city in city_list:
         weather = get_weather(city)
         country = get_country_by_code(get_country_code(weather))
+
         print("The weather in {0}, {1} is {2} degrees.".format(get_city_name(weather), country, get_temp(weather)))
 
 
