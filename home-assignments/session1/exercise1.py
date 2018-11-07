@@ -1,10 +1,10 @@
 """
+ Usage: exercise1.py <FILEPATH>
  Description: read your list of name and buckets and prints it in a new format
 """
 
 import json
 import yaml
-JSON_FILE_NAME = "my_list.json"
 
 
 def read_json_file(file):
@@ -13,9 +13,9 @@ def read_json_file(file):
     return data
 
 
-def main():
+def main(path):
     final_dict = {}
-    my_json = read_json_file(JSON_FILE_NAME)
+    my_json = read_json_file(path)
     buckets = my_json["buckets"]
     buckets.sort()
     ppl_ages = my_json["ppl_ages"]
@@ -35,10 +35,10 @@ def main():
                     final_dict[str(buckets[i]) + "-" + str(buckets[i+1])].append(ppl)
                     break
 
-    with open(JSON_FILE_NAME.replace(".json", ".yml"), "w") as f:
+    with open(path.replace(".json", ".yml"), "w") as f:
         yaml.dump(final_dict, f, default_flow_style=False, allow_unicode=True)
     print(final_dict)
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1])
