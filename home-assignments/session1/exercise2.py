@@ -5,7 +5,6 @@
 import json
 import requests
 import yaml
-# from pprint import pprint
 
 CITY_LIST = ['paris', 'new york', 'sydney', 'tokyo', 'london', 'montreal', 'Munich', 'Berlin', 'Zurich', 'melbourne']
 WEATHER_API_KEY = '794fa52c482584de13e29fa980b607df'
