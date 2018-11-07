@@ -1,3 +1,7 @@
+"""
+ Description: read your list of name and buckets and prints it in a new format
+"""
+
 import json
 import yaml
 JSON_FILE_NAME = "my_list.json"
