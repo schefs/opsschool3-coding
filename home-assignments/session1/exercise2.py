@@ -1,3 +1,7 @@
+"""
+ Description: Write to file my current location weather and print weather from a list of cities
+"""
+
 import json
 import requests
 import yaml
@@ -57,7 +61,6 @@ def weather_print(city_list):
 
 def main():
     my_city = get_my_city()
-    # my_location = json.loads(requests.get('http://ip-api.com/json').content)
     my_weather = get_weather(my_city)
     weather_to_file(my_weather, FILE_NAME)
     weather_print(CITY_LIST)
