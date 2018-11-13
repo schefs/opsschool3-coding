@@ -27,7 +27,7 @@ def validate_days_requested_from_cli(forecast, weather):
         except ValueError:
             raise ValueError('Syntax of days requested is not legal')
         except IndexError:
-            raise IndexError("Forecast amount of days requested is to available")
+            raise IndexError("Forecast amount of days requested is not available")
 
 
 def get_amount_of_days_requested_from_cli(forecast, weather):
